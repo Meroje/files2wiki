@@ -33,6 +33,6 @@ function list_pages()
     }
   }
   
-  $datas = array('Names' => $names,
+  return $datas = array('Names' => $names,
                  'Id'    => $ids);
 }

@@ -21,7 +21,7 @@ if(!empty($_POST['title']) && !empty($_POST['content']))
     <title>Wiki::New</title>
   </head>
   <body>
-    <? if($validated): ?>
+    <? if($submited): ?>
     <p>Your page has been created !<br />You can see it <a href="view.php?id=<?= $id ?>">here</a>.</p>
     <? else: ?>
     <form method="post" action="new.php">

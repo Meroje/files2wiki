@@ -42,4 +42,6 @@ function new_page($protect, $title, $content)
 
   file_put_contents($dir.'/title.txt', $title);
   file_put_contents($dir.'/content.txt', $content);
+
+  return $new_id;
 }

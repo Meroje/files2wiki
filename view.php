@@ -24,7 +24,7 @@ $data = view_page(intval($_GET['id']));
         </h1>
         <p>
             <?php if (!file_exists('pages/'.intval($_GET['id']).'/protect')): ?>
-            [<a href="restaure.php?id=<?php echo $_GET['id']; ?>">History</a>]
+            [<a href="history.php?id=<?php echo $_GET['id']; ?>">History</a>]
             <?php endif; ?>
             <br/>
             <br/>

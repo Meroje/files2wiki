@@ -14,25 +14,20 @@ function list_pages()
   //Variabless declaration
   $names = array();
   $ids = array();
-  $increment = 0;
-
   foreach($subdirs as $link) //Start the listing process
   {
     if(is_dir($link)) //If it's a directory, not a file
     {
       $id = explode('/', $link);
-      $ids[$increment] = $id[1]; //Page's id = Dirctory's name
+      $ids[] = $id[1]; //Page's id = Directory's name
 
       $title = $link.'/title.txt';
-      $open_title = fopen($title, 'r');
-      $read_title = fread($open_title, filesize($title));
+      $read_title = file_get_contents($title);
 
-      $names[$increment] = $read_title; //Put the page's title in the corresponding array
-
-      $increment++;
+      $names[] = $read_title; //Put the page's title in the corresponding array
     }
   }
   
   return $datas = array('Names' => $names,
-                 'Id'    => $ids);
+                        'Id'    => $ids);
 }

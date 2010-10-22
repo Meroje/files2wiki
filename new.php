@@ -22,7 +22,7 @@ if(!empty($_POST['title']) && !empty($_POST['content']))
   </head>
   <body>
     <? if($submited): ?>
-    <p>Your page has been created !<br />You can see it <a href="view.php?id=<?= $id ?>">here</a>.</p>
+    <p>Your page has been created !<br />You can see it <a href="view.php?id=<?php $id ?>">here</a>.</p>
     <? else: ?>
     <form method="post" action="new.php">
       <label for="title">Title : </label><br />

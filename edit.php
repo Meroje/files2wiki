@@ -41,31 +41,31 @@ if (! empty($_POST['title']) && ! empty($_POST['content'])) {
         <title>Wiki::Edit</title>
     </head>
     <body>
-        <? if ($edited): ?>
+        <?php if ($edited): ?>
         <p>
             Page edited !
             <br/>
-            <a href="view.php?id=<?= $_GET['id'] ?>">View the page</a>
+            <a href="view.php?id=<?php echo $_GET['id']; ?>">View the page</a>
         </p>
-        <? else : ?>
-        <form method="post" action="edit.php?id=<?= $_GET['id'] ?>">
+        <?php else : ?>
+        <form method="post" action="edit.php?id=<?php echo $_GET['id']; ?>">
             <label for="title">
                 Titre : 
             </label>
             <br/>
-            <input type="text" name="title" id="title" value="<?= $data['Title'] ?>" /><input type="hidden" name="title_old" value="<?= $data['Title'] ?>" />
+            <input type="text" name="title" id="title" value="<?php echo $data['Title']; ?>" /><input type="hidden" name="title_old" value="<?php echo $data['Title']; ?>" />
             <br/>
             <label for="content">
                 Content : 
             </label>
             <br/>
             <textarea name="content" id="content" rows="10" cols="100">
-                <?= $data['Content']?>
+<?php echo $data['Content']; ?>
             </textarea>
-            <input type="hidden" name="content_old" value="<?= $data['Content'] ?>" />
+            <input type="hidden" name="content_old" value="<?php echo $data['Content']; ?>" />
             <br/>
             <input type="submit" value="Edit the page !" />
         </form>
-        <? endif; ?>
+        <?php endif; ?>
     </body>
 </html>

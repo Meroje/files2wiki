@@ -12,11 +12,11 @@ $increment = 0;
   </head>
   <body>
     <p>
-  <? foreach($data['Names'] as $name): /*Explore the array*/ ?>
-  <?= '<a href="view.php?id='.$data['Id'][$increment].'">'.$name.'</a> [<a href="edit.php?id='.$data['Id'][$increment].'">Edit</a>]<br />' /*Display title with edit link*/ ?>
-  <? $increment++; ?>
-  <? endforeach; ?>
-  <?= '<br /><a href="new.php">Create a new page</a><br />' ?>
+  <?php foreach($data['Names'] as $name): /*Explore the array*/ ?>
+  <a href="view.php?id=<?php echo $data['Id'][$increment]; ?>"><?php echo $name; ?></a> [<a href="edit.php?id=<?php echo $data['Id'][$increment]; ?>">Edit</a>]<br /> <!--Display title with edit link-->
+  <?php $increment++; ?>
+  <?php endforeach; ?>
+  <br /><a href="new.php">Create a new page</a><br />
     </p>
   </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
 function view_page($id) {
     global $data;
-    $dir = "pages/$id";
+    $dir = "pages/".$id;
     
     if (is_dir($dir)) {
         $title = file_get_contents($dir.'/title.txt');

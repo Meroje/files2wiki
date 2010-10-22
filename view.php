@@ -12,23 +12,23 @@ $data = view_page(intval($_GET['id']));
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <title>
-            <?= $data['Title']?>
+            <?php echo $data['Title']; ?>
         </title>
     </head>
     <body>
         <h1>
-            <?= $data['Title']?>
-            <? if (!file_exists('pages/'.intval($_GET['id']).'/protect')): ?>
-            [<a href="edit.php?id=<?= $_GET['id'] ?>">Edit</a>]
-            <? endif; ?>
+            <?php echo $data['Title']; ?>
+            <?php if (!file_exists('pages/'.intval($_GET['id']).'/protect')): ?>
+            [<a href="edit.php?id=<?php echo $_GET['id']; ?>">Edit</a>]
+            <?php endif; ?>
         </h1>
         <p>
-            <? if (!file_exists('pages/'.intval($_GET['id']).'/protect')): ?>
-            [<a href="restaure.php?id=<?= $_GET['id'] ?>">History</a>]
-            <? endif; ?>
+            <?php if (!file_exists('pages/'.intval($_GET['id']).'/protect')): ?>
+            [<a href="restaure.php?id=<?php echo $_GET['id']; ?>">History</a>]
+            <?php endif; ?>
             <br/>
             <br/>
-            <?= $data['Content']?>
+            <?php echo $data['Content']; ?>
             <br/>
         </p>
     </body>
